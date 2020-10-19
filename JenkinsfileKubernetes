@@ -1,7 +1,7 @@
 node{
      
     stage('SCM Checkout'){
-        git credentialsId: 'Git_Credentials', url: 'https://github.com/vktechnologieschennai/spring-boot-mongo-docker.git',branch: 'master'
+        git credentialsId: 'GIT_CREDENTIALS', url:  'gitpath.git',branch: 'master'
     }
     
     stage(" Maven Clean Package"){
@@ -26,7 +26,7 @@ node{
      stage("Deploy To Kuberates Cluster"){
        kubernetesDeploy(
          configs: 'springBootMongo.yml', 
-         kubeconfigId: 'KUBERNETES_CLUSTER_CONFIG',
+         kubeconfigId: 'KUBERNATES_CONFIG',
          enableConfigSubstitution: true
         )
      }

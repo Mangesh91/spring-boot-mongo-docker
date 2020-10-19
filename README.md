@@ -34,4 +34,4 @@ docker ps -a
 ```
 
 ## License
-[VK Technologies](http://vktechnologies.co.in)
+[Mithun Technologies](http://mithuntechnologies.co.in)

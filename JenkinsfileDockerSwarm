@@ -1,6 +1,6 @@
 node{
     stage("Git CheckOut"){
-        git credentialsId: 'Git_Credentials', url: 'https://github.com/vktechnologieschennai/spring-boot-mongo-docker.git'
+        git url: 'githubpath.git',branch: 'master'
     }
     
     stage(" Maven Clean Package"){
@@ -10,7 +10,7 @@ node{
     } 
     
     stage("Build Dokcer Image") {
-         sh "docker build -t dockerhandson/spring-boot-mongo ."
+         sh "docker build -t venkatdockerhandson/spring-boot-mongo ."
     }
     
     stage("Docker Push"){
